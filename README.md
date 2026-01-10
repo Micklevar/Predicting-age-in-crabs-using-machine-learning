@@ -1,49 +1,41 @@
-# Predicting Age in Crabs Using Machine Learning
+Markdown
 
-Supervised machine learning project focused on predicting crab age from physical measurements.
+# 🦀 Crab Age Prediction: A Professional Machine Learning Approach
 
-![giphy](https://github.com/user-attachments/assets/4abae2c0-055e-47cd-81ac-83f9f0a49d7f)
+## 📌 Project Overview
+This repository documents a supervised machine learning project focused on predicting the age of crabs based on physical and morphological characteristics. Beyond a simple regression task, this project prioritizes **statistical rigor** and **clean data engineering** to ensure the final model is robust and generalizable.
 
-## Description
+The project follows the full Machine Learning lifecycle, with a deep focus on Exploratory Data Analysis (EDA) and evidence-based decision-making.
 
-This repository documents a **supervised machine learning project** focused on predicting the age of crabs based on their physical and morphological characteristics. The main objective of the project is to understand and apply the complete machine learning workflow, from exploratory data analysis (EDA) to model training and performance evaluation.
+## 🔬 Engineering Highlights (Current Progress)
 
-The project is developed as part of a **self-directed learning process**, prioritizing sound technical decision-making, result interpretation, and an understanding of the limitations of each model used.
+### 1. Robust Exploratory Data Analysis (EDA) & Cleaning
+* **Data Integrity:** Performed a comprehensive audit of the dataset, confirming 0% missing values across all 3,893 initial samples.
+* **Iterative Outlier Management (Tukey's Method):** Implemented a programmatic filtering process using the **Interquartile Range (IQR)**.
+    * *Strategic Decision:* Outliers in independent features were removed to reduce noise. However, outliers in the target variable (**Age**, 6.60%) were **preserved** to maintain natural biological variance and prevent predictive bias.
+* **Visual Diagnostics:** Developed comparative "Before vs. After" reporting using side-by-side boxplots to validate the impact of data cleaning on physical feature distributions.
 
-## Version 1 (Baseline Model)
+### 2. Technical Decision Making
+* **Target Integrity:** Justified the retention of extreme age values to allow the model to learn from rare but biologically valid specimens, which is crucial for real-world accuracy.
+* **Skewness Analysis:** Identified a **positive skew (right-skewed)** across all weight-related features. This guided the selection of robust scaling techniques to mitigate the influence of long tails on the model's loss function.
 
-In this first version, a **linear regression model** is used as a baseline. This approach allows for validating the consistency of the dataset and establishing a reference point for comparison with more complex models.
 
-Although the results are limited, this step provides valuable insights into the data and confirms the need for more expressive models.
 
-## Project Evolution
+## 🚀 Evolution & Roadmap
 
-The project is continuously evolving. Future versions will incorporate:
+The project is currently in active development following this phase-based roadmap:
 
-- Nonlinear regression models  
-- Hyperparameter tuning  
-- Additional evaluation metrics (e.g., MAE, RMSE)  
+- [x] **Phase 1: Robust EDA & Data Cleaning** (Standardization and outlier mitigation).
+- [ ] **Phase 2: Feature Engineering & Correlation Analysis** (Identifying multicollinearity and key predictors).
+- [ ] **Phase 3: Model Benchmarking** (Comparative analysis between Linear, Polynomial, and Random Forest models).
+- [ ] **Phase 4: Optimization & Pipelines** (Implementing Scikit-learn Pipelines to prevent Data Leakage).
 
-The goal is to improve predictive performance and deepen the analysis of the problem.
+## 📊 Evaluation Metrics
+Performance will be assessed using a multi-metric approach for a balanced evaluation:
+* **MAE (Mean Absolute Error):** Primary metric due to its robustness against residual outliers in the target.
+* **RMSE (Root Mean Squared Error):** To penalize significant prediction deviations.
+* **R² Score:** To quantify the variance explained by the final model.
 
-## Version 2 - Model Development and Evaluation
-
-In Version 2 of the project, the focus shifts from exploratory analysis and baseline modeling to a more structured evaluation of non-linear regression approaches. Building upon the cleaned and preprocessed dataset developed in Version 1, this stage is centered on improving predictive performance and comparing different modeling strategies.
-
-The following techniques and models were implemented:
-
-- Polynomial Linear Regression (degrees 2 and 3) to capture non-linear relationships between physical crab features and age.
-
-- Random Forest Regressor as a tree-based ensemble model capable of modeling complex feature interactions without assuming linearity.
-
-- Scikit-learn pipelines to integrate data preprocessing and model training in a consistent and reproducible workflow, while avoiding data leakage.
-
-Model performance was evaluated using multiple regression metrics:
-
-- Mean Absolute Error (MAE) to measure average prediction error magnitude.
-
-- Mean Squared Error (MSE) to penalize larger prediction errors.
-
-- Coefficient of Determination (R²) to assess the explanatory power of each model.
-
-The results show that the polynomial regression model achieved the best overall performance among the evaluated approaches, outperforming both the baseline linear regression and the Random Forest model under the current experimental conditions. These findings highlight the importance of aligning model complexity with dataset characteristics rather than assuming that more complex models will always yield superior results.
+---
+**Author:** [Alejandro Santos]  
+**Stack:** Python, Pandas, Seaborn, Matplotlib, Scikit-learn.
