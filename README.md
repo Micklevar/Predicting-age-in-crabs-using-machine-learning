@@ -1,5 +1,5 @@
-Markdown
 
+![Crab Data Analysis](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcjVzdXI1NnI5bzF3ZW9hb3I5MWo0b3d4cnBhMDN0ZzNrb2Z6YnduZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/9mrc42NoOaUhf0LhDI/giphy.gif)
 # 🦀 Crab Age Prediction: A Professional Machine Learning Approach
 
 ## 📌 Project Overview
